@@ -2,15 +2,13 @@ import React from "react";
 
 interface Props {
   title: String;
-  img?: HTMLImageElement;
+  img?: string;
 }
 
 export const NavItem: React.FC<Props> = ({ title, img }) => {
   return (
     <>
-      {img !== null && 
-      <img src={img}></img>
-      }
+      {img && (<img src={img} />)}
       <h1 className="title">{title}</h1>
     </>
   );
