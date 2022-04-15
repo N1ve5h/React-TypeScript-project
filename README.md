@@ -58,6 +58,6 @@ Trying to figure out how to create an image element tag when given the image src
 ## Author
 
 - Github - [N1ve5h](https://github.com/N1ve5h)
-- Linkedin - [nivesh-gnanaseelan](www.linkedin.com/in/nivesh-gnanaseelan)
+- Linkedin - [nivesh-gnanaseelan](https://www.linkedin.com/in/nivesh-gnanaseelan)
 
 
