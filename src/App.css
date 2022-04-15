@@ -5,7 +5,9 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 1rem;
+  margin: 0rem 0rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 0px 10px rgb(180, 180, 180);
 }
 
 .title {
@@ -25,4 +27,38 @@
 .colorButton img {
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.search {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 75%;
+  margin: 2rem 2.25rem;
+  border-radius: 5px;
+  padding: 2px 12px;
+  box-shadow: 0px 0px 10px rgb(180, 180, 180);
+}
+.search__image img {
+  width: 70%;
+  position: relative;
+  top: 1px;
+  right: 4px;
+}
+.search__input {
+  border: 0;
+  padding: 13px 0px;
+  font-size: 13px;
+}
+.search__input:-webkit-autofill {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.search__button {
+  margin-left: 3px;
+  background-color: #0079fe;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
 }/*# sourceMappingURL=App.css.map */
