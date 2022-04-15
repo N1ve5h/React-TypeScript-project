@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import search from "../../assets/icon-search.svg";
 
-export const Input: React.FC = () => {
+export const Main: React.FC = () => {
     const [country, setCountry] = useState('');
   return (
     <main>
