@@ -52,7 +52,7 @@ Trying to figure out how to create an image element tag when given the image src
 
 - [React TypeScript Tutorial](https://www.youtube.com/watch?v=Z5iWr6Srsj8) - This helped me for understand how to define variables and funcions with a datatype.
 
-- [property does not exist on type 'jsx.intrinsicelements'](https://stackoverflow.com/questions/37414304/typescript-complains-property-does-not-exist-on-type-jsx-intrinsicelements-whe) - This is a Q&A which helped me finally understand why I was getting an error in the brackets. I needed to create .tsx files with a capital letter that the start.
+- [property does not exist on type 'jsx.intrinsicelements'](https://stackoverflow.com/questions/37414304/typescript-complains-property-does-not-exist-on-type-jsx-intrinsicelements-whe) - This is a Q&A which helped me finally understand why I was getting an error in the brackets. I needed to create .tsx files with a capital letter at the start.
 
 
 ## Author
