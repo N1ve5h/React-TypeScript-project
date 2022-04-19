@@ -4,16 +4,30 @@ import search from "../../assets/icon-search.svg";
 export const Main: React.FC = () => {
   const [country, setCountry] = useState("");
   const [apiCountries, setapiCountries] = useState([]);
-  const [region, setRegion] = useState("");
+  const [regions, setRegion] = useState(["All", "Africa","America","Asia","Europe","Oceania"]);
   const [error, setError] = useState({});
-
-
+  const [selectedRegion, setselectedRegion] = useState("");
+ 
   useEffect(() => {
     fetch(`https://restcountries.com/v2/all`)
-    .then(response =>response.json())
-    .then(res => setapiCountries(res))
-    .catch(err => setError(err))
-  },[])
+      .then((response) => response.json())
+      .then((res) => setapiCountries(res))
+      .catch((err) => setError(err));
+  }, []);
+
+  interface apiCountries {
+    name: String;
+    nativeName: String;
+    population: Number;
+    region: String;
+    subregion: String;
+    capital: String;
+    topLevelDomain: String;
+    currencies: String;
+    languages: Array<String>;
+    borders: Array<String>;
+    flags: String;
+  }
 
   return (
     <main>
@@ -33,17 +47,12 @@ export const Main: React.FC = () => {
         />
       </form>
 
-      <select name="region" className="regionFilter">
-        <option value="all">Filter by Region</option>
-        <option value="africa">Africa</option>
-        <option value="americas">Americas</option>
-        <option value="asia">Asia</option>
-        <option value="europe">Europe</option>
-        <option value="oceania">Oceania</option>
+      <select name="region" className="regionFilter" value={selectedRegion}>
+        {regions.length > 0 ? regions.map(region => <option key={region} value={region === 'All' ? '' : region.toLocaleLowerCase()}>{region}</option>) : ''}
       </select>
 
-      {/* <Country country={country}  region={region}/> */}
-
+      {/* {apiCountries.length > 0 ? apiCountries.map(apiCountry => console.log(apiCountry.region)) : console.log("Error, fetch failed")} */}
     </main>
   );
 };
+//  
