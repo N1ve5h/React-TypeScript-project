@@ -15,8 +15,7 @@ export const Navbar: React.FC = () => {
     <header className="navbar">
       <NavItem title={"Where in the world?"} />
       <section className="colorButton" onClick={() => themeToggler()}>
-        {theme === "light" && <NavItem img={night} title={"Dark Mode"} />}
-        {theme === "dark" && <NavItem img={day} title={"Light Mode"} />}
+        {theme === "light" ? <NavItem img={night} title={"Dark Mode"}/> :  <NavItem img={day} title={"Light Mode"}/>}
       </section>
     </header>
   );
