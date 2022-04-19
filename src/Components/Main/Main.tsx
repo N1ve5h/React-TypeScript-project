@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import search from "../../assets/icon-search.svg";
 
 export const Main: React.FC = () => {
   const [country, setCountry] = useState("");
+  const [apiCountries, setapiCountries] = useState([]);
   const [region, setRegion] = useState("");
+  const [error, setError] = useState({});
+
+
+  useEffect(() => {
+    fetch(`https://restcountries.com/v2/all`)
+    .then(response =>response.json())
+    .then(res => setapiCountries(res))
+    .catch(err => setError(err))
+  },[])
 
   return (
     <main>
@@ -15,8 +25,8 @@ export const Main: React.FC = () => {
           required
           className="search__input"
           type="text"
-          name="searchgituser"
-          id="searchgituser"
+          name="searchCountry"
+          id="searchCountry"
           placeholder="Search for a country..."
           value={country}
           onChange={(e) => setCountry(e.target.value)}
@@ -24,7 +34,7 @@ export const Main: React.FC = () => {
       </form>
 
       <select name="region" className="regionFilter">
-        <option value="">Filter by Region</option>
+        <option value="all">Filter by Region</option>
         <option value="africa">Africa</option>
         <option value="americas">Americas</option>
         <option value="asia">Asia</option>
@@ -33,6 +43,7 @@ export const Main: React.FC = () => {
       </select>
 
       {/* <Country country={country}  region={region}/> */}
+
     </main>
   );
 };
