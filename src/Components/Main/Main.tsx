@@ -65,9 +65,9 @@ export const Main: React.FC = () => {
         {apiCountries.length > 0 ? (
           <>
             {region == ""
-              ? apiCountries.map((countries) => <p>{countries["name"]}</p>)
+              ? apiCountries.filter(countries => countries["name"] == country).map((countries) => <p>{countries["name"]}</p>)
               : apiCountries
-              .filter(countries => countries["region"] === region)
+              .filter(countries => countries["region"] === region && countries["name"] == country)
                   .map((filteredCountry) => <p>{filteredCountry["name"]}</p>)
                   }
           </>
