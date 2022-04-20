@@ -4,17 +4,15 @@ import search from "../../assets/icon-search.svg";
 export const Main: React.FC = () => {
   const [country, setCountry] = useState("");
   const [apiCountries, setapiCountries] = useState([]);
-  const [regions, setRegion] = useState(["All", "Africa","America","Asia","Europe","Oceania"]);
+  const [region, setRegion] = useState("");
   const [error, setError] = useState({});
-  const [selectedRegion, setselectedRegion] = useState("");
- 
+
   useEffect(() => {
     fetch(`https://restcountries.com/v2/all`)
       .then((response) => response.json())
       .then((res) => setapiCountries(res))
       .catch((err) => setError(err));
   }, []);
-
   interface apiCountries {
     name: String;
     nativeName: String;
@@ -47,12 +45,36 @@ export const Main: React.FC = () => {
         />
       </form>
 
-      <select name="region" className="regionFilter" value={selectedRegion}>
-        {regions.length > 0 ? regions.map(region => <option key={region} value={region === 'All' ? '' : region.toLocaleLowerCase()}>{region}</option>) : ''}
+      <select
+        name="region"
+        className="regionFilter"
+        onChange={(e) => {
+          const selectedRegion = e.target.value;
+          setRegion(selectedRegion);
+        }}
+      >
+        <option value="">All</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
       </select>
 
-      {/* {apiCountries.length > 0 ? apiCountries.map(apiCountry => console.log(apiCountry.region)) : console.log("Error, fetch failed")} */}
+      <div>
+        {apiCountries.length > 0 ? (
+          <>
+            {region == ""
+              ? apiCountries.map((countries) => <p>{countries["name"]}</p>)
+              : apiCountries
+              .filter(countries => countries["region"] === region)
+                  .map((filteredCountry) => <p>{filteredCountry["name"]}</p>)
+                  }
+          </>
+        ) : (
+          ''
+        )}
+      </div>
     </main>
   );
 };
-//  
