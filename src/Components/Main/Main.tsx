@@ -27,6 +27,10 @@ export const Main: React.FC = () => {
     flags: String;
   }
 
+  const fuzzySearchCountry = (name: string) => {
+    if (name.toLowerCase().indexOf(country.toLowerCase()) !== -1) return name;
+  }
+
   return (
     <main>
       <form className="search">
@@ -65,9 +69,9 @@ export const Main: React.FC = () => {
         {apiCountries.length > 0 ? (
           <>
             {region == ""
-              ? apiCountries.filter(countries => countries["name"] == country).map((countries) => <p>{countries["name"]}</p>)
+              ? apiCountries.filter(countries => fuzzySearchCountry(countries['name'])).map((countries) => <p>{countries["name"]}</p>)
               : apiCountries
-              .filter(countries => countries["region"] === region && countries["name"] == country)
+              .filter(countries => countries["region"] === region).filter(countries => fuzzySearchCountry(countries['name']))
                   .map((filteredCountry) => <p>{filteredCountry["name"]}</p>)
                   }
           </>
