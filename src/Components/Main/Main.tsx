@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import search from "../../assets/icon-search.svg";
+import { Card } from "./Card";
 
 export const Main: React.FC = () => {
   const [country, setCountry] = useState("");
@@ -13,19 +14,6 @@ export const Main: React.FC = () => {
       .then((res) => setapiCountries(res))
       .catch((err) => setError(err));
   }, []);
-  interface apiCountries {
-    name: String;
-    nativeName: String;
-    population: Number;
-    region: String;
-    subregion: String;
-    capital: String;
-    topLevelDomain: String;
-    currencies: String;
-    languages: Array<String>;
-    borders: Array<String>;
-    flags: String;
-  }
 
   const fuzzySearchCountry = (name: string) => {
     if (name.toLowerCase().indexOf(country.toLowerCase()) !== -1) return name;
@@ -68,8 +56,8 @@ export const Main: React.FC = () => {
       <div>
         {apiCountries.length > 0 ? (
           <>
-            {region == ""
-              ? apiCountries.filter(countries => fuzzySearchCountry(countries['name'])).map((countries) => <p>{countries["name"]}</p>)
+            {region === ""
+              ? apiCountries.filter(countries => fuzzySearchCountry(countries['name'])).map((countries) => <Card country={countries} />)
               : apiCountries
               .filter(countries => countries["region"] === region).filter(countries => fuzzySearchCountry(countries['name']))
                   .map((filteredCountry) => <p>{filteredCountry["name"]}</p>)
