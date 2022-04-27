@@ -60,7 +60,7 @@ export const Main: React.FC = () => {
               ? apiCountries.filter(countries => fuzzySearchCountry(countries['name'])).map((countries) => <Card country={countries} />)
               : apiCountries
               .filter(countries => countries["region"] === region).filter(countries => fuzzySearchCountry(countries['name']))
-                  .map((filteredCountry) => <p>{filteredCountry["name"]}</p>)
+                  .map((filteredCountry) => <Card country={filteredCountry} />)
                   }
           </>
         ) : (
