@@ -1,24 +1,9 @@
 import { Link } from "react-router-dom";
-
-interface Props {
-  country: {
-    name: String;
-    nativeName: String;
-    population: number;
-    region: String;
-    subregion: String;
-    capital: String;
-    topLevelDomain: String;
-    currencies: String;
-    languages: Array<String>;
-    borders: Array<String>;
-    flags: { svg: string };
-  };
-}
+import Props from "../../Props";
 
 export const Card: React.FC<Props> = ({ country }) => {
   return (
-    <Link>
+    <Link to={`/country/${country.name}`}>
       <div className="card">
         <img src={country["flags"]["svg"]} alt="" />
         <h1 className="title">{country["name"]}</h1>
