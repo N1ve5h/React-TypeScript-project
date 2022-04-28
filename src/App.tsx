@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Main } from "./Components/Main/Main";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Country } from "./Components/Main/Country/Country";
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const App: React.FC = () => {
       <Navbar />
         <Routes>   
           <Route path="/" element={<Main />} />
+          <Route path="/country/:name" element={<Country/>} />
         </Routes>
       </div>
     </Router>
