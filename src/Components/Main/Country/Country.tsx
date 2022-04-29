@@ -1,10 +1,11 @@
+import { useLocation } from "react-router";
+
 export const Country: React.FC = () => {
-    let country = location.param;
-    return (
-       
-      <div>
-          
-          <h1>Hello</h1>
-      </div>
-    );
-  };
+  const location = useLocation();
+  let {country}: any = location.state;
+  return (
+    <div>
+      <h1>{country.name}</h1>
+    </div>
+  );
+};
