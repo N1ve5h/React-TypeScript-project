@@ -47,5 +47,5 @@ export const Country: React.FC = () => {
         </p>
       </div>
     </>
-  );
+  )
 };
