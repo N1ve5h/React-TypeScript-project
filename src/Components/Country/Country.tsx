@@ -1,5 +1,5 @@
 import { useLocation } from "react-router";
-import arrow from "../../../assets/arrow-left-long-solid.svg";
+import arrow from "../../assets/arrow-left-long-solid.svg";
 import { Link } from "react-router-dom";
 
 export const Country: React.FC = () => {
@@ -9,7 +9,7 @@ export const Country: React.FC = () => {
   return (
     <>
       <Link to='/'><button className="backButton">
-        <img src={arrow} /> Back
+        <img src={arrow} alt="Back Arrow"/> Back
       </button>
       </Link>
       <div className="card detail">

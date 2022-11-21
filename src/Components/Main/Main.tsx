@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import search from "../../assets/icon-search.svg";
-import { Card } from "./Card";
+import { Card } from "../Card";
 
 export const Main: React.FC = () => {
   const [country, setCountry] = useState("");
@@ -17,7 +17,7 @@ export const Main: React.FC = () => {
 
   const fuzzySearchCountry = (name: string) => {
     if (name.toLowerCase().indexOf(country.toLowerCase()) !== -1) return name;
-  }
+  };
 
   return (
     <main>
@@ -57,14 +57,16 @@ export const Main: React.FC = () => {
         {apiCountries.length > 0 ? (
           <>
             {region === ""
-              ? apiCountries.filter(countries => fuzzySearchCountry(countries['name'])).map((countries) => <Card country={countries} />)
+              ? apiCountries
+                  .filter((countries) => fuzzySearchCountry(countries["name"]))
+                  .map((countries) => <Card country={countries} />)
               : apiCountries
-              .filter(countries => countries["region"] === region).filter(countries => fuzzySearchCountry(countries['name']))
-                  .map((filteredCountry) => <Card country={filteredCountry} />)
-                  }
+                  .filter((countries) => countries["region"] === region)
+                  .filter((countries) => fuzzySearchCountry(countries["name"]))
+                  .map((filteredCountry) => <Card country={filteredCountry} />)}
           </>
         ) : (
-          ''
+          ""
         )}
       </div>
     </main>

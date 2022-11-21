@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import Props from "../../Props";
+import Props from "../Props";
 
-export const Card: React.FC<Props> = ({ country }) => {  
+export const Card: React.FC<Props> = ({ country }) => {
   return (
-    <Link to={`/country/${country.name}`} state={{country}}>
+    <Link to={`/country/${country.name}`} state={{ country }}>
       <div className="card">
         <img src={country.flags.svg} alt="" />
         <h1 className="title">{country.name}</h1>
