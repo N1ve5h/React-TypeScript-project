@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import search from "../../assets/icon-search.svg";
-import { Card } from "../Card";
+import { Card } from "../Card/Card";
 
 export const Main: React.FC = () => {
   const [country, setCountry] = useState("");
