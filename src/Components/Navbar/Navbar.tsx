@@ -13,7 +13,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="navbar">
-      <NavItem title={"Where in the world?"} />
+      <h1>Where in the world?</h1>
       <section className="colorButton" onClick={() => themeToggler()}>
         {theme === "light" ? <NavItem img={night} title={"Dark"}/> :  <NavItem img={day} title={"Light"}/>}
       </section>
