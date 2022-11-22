@@ -9,7 +9,7 @@ export const NavItem: React.FC<Props> = ({ title, img }) => {
   return (
     <>
       {img && (<img src={img} />)}
-      <h1 className="title">{title}</h1>
+      <h1 className="title">{title} Mode</h1>
     </>
   );
 };
