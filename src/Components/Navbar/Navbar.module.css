@@ -1,0 +1,11 @@
+.heading {
+    font-weight: 700;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
