@@ -2,10 +2,20 @@
     font-weight: 700;
 }
 
-.flex {
+.navbar {
+    background-color: #fff;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5em;
+    padding: 1.5em 0;
+    box-shadow: 0 0.0625em;
 }
 
-.row {
-    flex-direction: row;
+.button {
+    background-color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
