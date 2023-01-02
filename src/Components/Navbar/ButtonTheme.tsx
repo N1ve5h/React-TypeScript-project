@@ -5,7 +5,7 @@ interface Props {
   img?: string;
 }
 
-export const NavItem: React.FC<Props> = ({ title, img }) => {
+export const ButtonTheme: React.FC<Props> = ({ title, img }) => {
   return (
     <>
       {img && (<img src={img} alt=''/>)}
