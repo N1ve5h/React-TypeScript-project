@@ -1,21 +1,18 @@
 .heading {
-    font-weight: 700;
+  font-weight: 800;
 }
 
 .navbar {
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 5em;
-    padding: 1.5em 0;
-    box-shadow: 0 0.0625em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5em;
+  padding: 1.5em 0;
 }
 
 .button {
-    background-color: #fff;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}/*# sourceMappingURL=Navbar.module.css.map */
